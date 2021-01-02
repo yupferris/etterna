@@ -782,4 +782,9 @@ GetBacktrace(const void** buf, size_t size, const BacktraceContext* ctx)
 	buf[1] = NULL;
 }
 
+void
+GetSignalBacktraceContext(BacktraceContext* ctx, const ucontext_t* uc)
+{
+}
+
 #endif

@@ -17,7 +17,7 @@
 #include "GamePreferences.h"
 
 #ifndef _WIN32
-#include <cpuid.h>
+//#include <cpuid.h>
 #endif
 
 #ifdef _WIN32
@@ -234,7 +234,7 @@ uint16_t
 getCpuHash()
 {
 	uint32_t cpuinfo[4] = { 0, 0, 0, 0 };
-	__get_cpuid(0, &cpuinfo[0], &cpuinfo[1], &cpuinfo[2], &cpuinfo[3]);
+	//__get_cpuid(0, &cpuinfo[0], &cpuinfo[1], &cpuinfo[2], &cpuinfo[3]);
 	uint16_t hash = 0;
 	uint32_t* ptr = (&cpuinfo[0]);
 	for (uint32_t i = 0; i < 4; i++)

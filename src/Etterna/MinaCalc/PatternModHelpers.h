@@ -3,7 +3,8 @@
 #include <array>
 #include <vector>
 #include <algorithm>
-#include <xmmintrin.h>
+//#include <xmmintrin.h>
+#include <cmath>
 #include <numeric>
 
 /* generic pattern mod functions and defs to help either agnostic or dependent
@@ -14,25 +15,27 @@ static const float neutral = 1.F;
 inline auto
 fastpow(double a, double b) -> float
 {
-	int u[2];
+	/*int u[2];
 	std::memcpy(&u, &a, sizeof a);
 	u[1] = static_cast<int>(b * (u[1] - 1072632447) + 1072632447);
 	u[0] = 0;
 	std::memcpy(&a, &u, sizeof a);
-	return static_cast<float>(a);
+	return static_cast<float>(a);*/
+	return powf(a, b);
 }
 
 // not super accurate, good enough for our purposes
 inline auto
 fastsqrt(float _in) -> float
 {
-	if (_in == 0.F) {
+	/*if (_in == 0.F) {
 		return 0.F;
 	}
 	const auto in = _mm_load_ss(&_in);
 	float out;
 	_mm_store_ss(&out, _mm_mul_ss(in, _mm_rsqrt_ss(in)));
-	return out;
+	return out;*/
+	return sqrtf(_in);
 }
 
 template<typename T>

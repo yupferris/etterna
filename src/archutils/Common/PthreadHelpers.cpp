@@ -256,7 +256,7 @@ GetThreadBacktraceContext(uint64_t ThreadID, BacktraceContext* ctx)
 	if (errno)
 		return false;
 #else
-#error GetThreadBacktraceContext: which arch?
+//#error GetThreadBacktraceContext: which arch?
 #endif
 
 	return true;

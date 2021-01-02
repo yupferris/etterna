@@ -158,7 +158,7 @@ set(DASM_ARCH x86)
 # All ARM hosts (iOS, Android, Raspberry Pi etc.)
 if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "(arm|ARM).*")
   set(DASM_ARCH arm)
-  list(APPEND DASM_FLAGS "-D DUALNUM")
+  list(APPEND DASM_FLAGS -D DUALNUM)
   add_definitions("-DLJ_ARCH_HASFPU=1")
 endif()
 
